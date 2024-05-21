@@ -1,14 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BasePage } from "./components/basePage";
+import { JobOffert } from "./features/offert/jobOffert";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import { SignUp } from "./features/auth/pages/signUp";
+import { Login } from "./features/auth/pages/login";
 import { Toaster } from "./components/ui/toaster";
-import { LandingPage } from "./features/landing/landingPage";
 
 const router = createBrowserRouter([
   {
-    element: <LandingPage />,
+    element: <BasePage />,
+    children: [
+      {
+        path: "/",
+        element: <SignUp />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/offert",
+        element: <JobOffert />,
+      },
+    ],
   },
 ]);
 

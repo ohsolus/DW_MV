@@ -11,7 +11,7 @@ const routes: Array<{
 }> = [
   {
     title: "Registro",
-    to: "/signUp",
+    to: "/",
     isProtected: false,
   },
   {
